@@ -1,0 +1,74 @@
+﻿@model ViewClassModel
+
+@{
+    ViewData["Title"] = "Details";
+} 
+
+<h1>Details</h1>
+
+<div>
+    <h5>@Model.Id</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Teacher != null)
+            {
+                <tr>
+                    <td>
+                        @Model.Teacher.DisplayName
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        No teacher found
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Students</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Students.Any())
+            {
+                <tr>
+                    <td>
+                        No students found
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach(var student in Model.Students)
+                {
+                <tr>
+                    <td>
+                        @student.DisplayName
+                        
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center text-center">
+        <div>
+
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id"></a>
+    <a asp-action="Index">Back to List</a>
+</div>

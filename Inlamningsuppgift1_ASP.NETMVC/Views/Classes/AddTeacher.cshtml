@@ -1,0 +1,22 @@
+﻿@model AddTeacherModel
+
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Teacher" class="control-label">Teacher</label>
+        @Html.DropDownListFor(m => m.Teacher, new SelectList(ViewBag.Teachers, "Id", "DisplayName"), "Select a Teacher")
+    </div>
+    <div class="form-group">
+
+    </div>
+    <input type="submit" value="Add Teacher" class="btn btn-primary" />
+
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
