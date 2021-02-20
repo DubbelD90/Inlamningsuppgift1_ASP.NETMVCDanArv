@@ -593,3 +593,6 @@ C:\Users\dcloc\Desktop\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_AS
 C:\Users\dcloc\Desktop\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Inlamningsuppgift1_ASP.NETMVC.genruntimeconfig.cache
 C:\Users\dcloc\Desktop\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
 C:\Users\dcloc\Desktop\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Razor\Views\Classes\AddTeacher.cshtml.g.cs
+C:\Users\dcloc\Desktop\Daniel\Skola\Webbutvecklare inom .NET\ASP.NET MVC\Inlämningsuppgifter\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
+C:\Users\dcloc\Desktop\Daniel\Skola\Webbutvecklare inom .NET\ASP.NET MVC\Inlämningsuppgifter\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Razor\Views\Classes\AddTeacher.cshtml.g.cs
+C:\Users\dcloc\Desktop\Daniel\Skola\Webbutvecklare inom .NET\ASP.NET MVC\Inlämningsuppgifter\Inlamningsuppgift1_ASP.NETMVCDanArv\Inlamningsuppgift1_ASP.NETMVC\obj\Debug\net5.0\Razor\Views\Users\AllStudentsList.cshtml.g.cs

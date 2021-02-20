@@ -15,7 +15,7 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Controllers
     [Authorize(Roles = "Admin")]
     public class ClassesController : Controller
     {
-        private readonly ApplicationDbContext _context:
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
