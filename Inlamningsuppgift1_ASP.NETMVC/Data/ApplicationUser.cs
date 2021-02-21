@@ -35,7 +35,5 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Data
 
         public string DisplayName => $"{FirstName} {LastName}";
 
-        //public virtual SchoolClass Class { get; set; }
-
     }
 }

@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 namespace Inlamningsuppgift1_ASP.NETMVC.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

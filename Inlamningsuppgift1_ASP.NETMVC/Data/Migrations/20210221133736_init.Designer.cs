@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inlamningsuppgift1_ASP.NETMVC.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210204175106_init")]
+    [Migration("20210221133736_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,9 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("SchoolClassId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,7 +97,24 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Data.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("SchoolClassId");
+
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Inlamningsuppgift1_ASP.NETMVC.Models.SchoolClass", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TeacherId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Classes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -228,6 +248,22 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Inlamningsuppgift1_ASP.NETMVC.Data.ApplicationUser", b =>
+                {
+                    b.HasOne("Inlamningsuppgift1_ASP.NETMVC.Models.SchoolClass", null)
+                        .WithMany("Students")
+                        .HasForeignKey("SchoolClassId");
+                });
+
+            modelBuilder.Entity("Inlamningsuppgift1_ASP.NETMVC.Models.SchoolClass", b =>
+                {
+                    b.HasOne("Inlamningsuppgift1_ASP.NETMVC.Data.ApplicationUser", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId");
+
+                    b.Navigation("Teacher");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -277,6 +313,11 @@ namespace Inlamningsuppgift1_ASP.NETMVC.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Inlamningsuppgift1_ASP.NETMVC.Models.SchoolClass", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }
